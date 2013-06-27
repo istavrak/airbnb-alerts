@@ -12,8 +12,9 @@ Code package usage
 1.Run the .sql dump file on the MySQL instance in order to create the appropriate schema and tables. 
 2.Put the .php file located at the presentation folder on the server (e.g. Tomcat).
 3.Navigate in the airbnb website and formulate the search that you want to monitor.
-4.Copy the link and paste it in the respective field in the code.
-5.Run the Python script. It crawls the search page and pushes the results in the db.
-6.Open the airbnb_alerts.php and see the collected results.
+4.Setup the config.php.example and the settings.cfg.example with the database credentials. In the settings.cfg add the search URL of step 3.
+5.Remove the .example suffix from the config.php and setting.cfg files.
+6.Run the Python script. It crawls the search page and pushes the results in the db.
+7.Open the airbnb_alerts.php and see the collected results.
 
-When you want to recheck you have to re-run the steps 5 and 6.
+When you want to recheck you have to re-run the steps 6 and 7.
