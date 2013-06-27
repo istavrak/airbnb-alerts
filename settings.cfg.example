@@ -1,0 +1,10 @@
+#The following settins should be set
+
+[MYSQL]
+db_user=			#the user of the database
+db_pass=			#the password of the user
+db_location=localhost	#the location of the database
+db_name=airbnb_alerts	#the name of the database
+
+[Scrapy]
+search_url=https://www.airbnb.com/s/Vienna--Austria?checkin=07%2F07%2F2013&checkout=08%2F07%2F2013&price_max=1000&room_types%5B%5D=Entire+home%2Fapt&room_types%5B%5D=Private+room
