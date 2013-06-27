@@ -4,10 +4,11 @@
 </head>
 <body>
 <?php
+require_once('config.php');
 //the example of searching data with the sequence based on the field name
 //search.php
-$dbhandle=mysql_connect("localhost","istavrak","password");//database connection
-$selected=mysql_select_db("airbnb_alerts",$dbhandle);
+$dbhandle=mysql_connect($db_loc,$db_user,$db_pass);//database connection
+$selected=mysql_select_db($db_name,$dbhandle);
 				
 $order = "select image_uri,room_price,status,room_URI from entries order by status DESC;";
 //order to search data
