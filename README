@@ -3,12 +3,14 @@
 This mini project aims to assist the searching of new entries for a specific search in airbnb
 
 Requirements
+------------
 -Python 2.7 
 -Scrapy (get it from http://scrapy.org/)
 -MySQL
 -Server that supports PhP, like Apache Tomcat.
 
 Code package usage
+------------------
 1.Run the .sql dump file on the MySQL instance in order to create the appropriate schema and tables. 
 2.Put the .php file located at the presentation folder on the server (e.g. Tomcat).
 3.Navigate in the airbnb website and formulate the search that you want to monitor.
@@ -17,4 +19,8 @@ Code package usage
 6.Run the Python script. It crawls the search page and pushes the results in the db.
 7.Open the airbnb_alerts.php and see the collected results.
 
-When you want to recheck you have to re-run the steps 6 and 7.
+Notes
+-----
+When you want to check about new entries you have to re-run the steps 6 and 7.
+
+#EOF
