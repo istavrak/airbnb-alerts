@@ -8,15 +8,28 @@ from scrapy.selector import HtmlXPathSelector
 from scrapy.http.request import Request
 from crawlAirbnb.items import apartment_Item
 import MySQLdb as mdb
+import ConfigParser
+
 
 class gpspider(BaseSpider):
     name="abHotelsList"
     allowed_domains=["airbnb.com"]
-    start_urls=["https://www.airbnb.com/s/Vienna--Austria?checkin=07%2F05%2F2013&checkout=08%2F07%2F2013&price_max=1000&room_types%5B%5D=Entire+home%2Fapt&room_types%5B%5D=Private+room"]
     
+    Config = ConfigParser.ConfigParser()
+    Config.read("..//settings.cfg")
+    db_user=Config.get("MYSQL", "db_user")
+    db_pass=Config.get("MYSQL", "db_pass")
+    db_location=Config.get("MYSQL", "db_location")
+    db_name=Config.get("MYSQL", "db_name")
+    search_url=Config.get("Scrapy", "search_url")
+    
+    start_urls=[search_url]
+    
+   
     
     def parse(self,response):
-        con = mdb.connect('localhost', 'istavrak', '2686', 'airbnb_alerts');
+        
+        con = mdb.connect(self.db_location, self.db_user, self.db_pass, self.db_name);
         classResultItem='search_result ' #div - wraps the result item
         classRoomImage='pop_image_small' #div - wraps the URI to the image of the room
         classRoomPriceWraper='price monthly' #h3 - wraps the title of the room
