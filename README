@@ -15,7 +15,7 @@ Code package usage
 2.Put the .php file located at the presentation folder on the server (e.g. Tomcat).
 3.Navigate in the airbnb website and formulate the search that you want to monitor.
 4.Setup the config.php.example and the settings.cfg.example with the database credentials. In the settings.cfg add the search URL of step 3.
-5.Remove the .example suffix from the config.php and setting.cfg files.
+5.Remove the .example suffix from the config.php and settings.cfg files.
 6.Run the Python script. It crawls the search page and pushes the results in the db.
 7.Open the airbnb_alerts.php and see the collected results.
 
